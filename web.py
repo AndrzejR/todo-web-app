@@ -8,10 +8,10 @@ def add_todo():
     new_todo = st.session_state['new_todo']
     todos.append(new_todo)
     functions.write_todos(todos)
+    st.session_state['new_todo'] = ""
 
 
-st.title("A Generic To-Do App")
-st.subheader("Get stuff done.")
+st.title("My Todos:")
 
 for i, todo in enumerate(todos):
     st.checkbox(todo, key=todo)
